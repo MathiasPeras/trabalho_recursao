@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+char* Origem = "A";
+char* Destino = "B";
+char* Auxiliar = "C";
+int n = 7;
+
+
+void jogo(char* Origem, char* Destino, char* Auxiliar, int n)
+{
+    if (n == 1)
+        printf("move de %s para %s\n", Origem, Destino);
+    else
+    {
+        jogo(Origem, Auxiliar, Destino, n - 1);
+        printf("move de %s para %s \n", Origem, Destino);
+        jogo( Auxiliar, Destino, Origem, n - 1);
+    }
+}
+int main()
+{
+    jogo("A", "B", "C", n);
+    return 0;
+}
+    
